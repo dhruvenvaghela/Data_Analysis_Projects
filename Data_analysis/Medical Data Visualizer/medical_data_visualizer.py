@@ -4,10 +4,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # 1
-df = None
+df = pd.read_csv('medical_examination.csv')
 
 # 2
-df['overweight'] = None
+df['weight_index'] = (df.loc[:]['weight'])/(((df.loc[:]['height'])/100)**2)
+df['overweight'] = ((df.weight_index) > 25).astype(int)
 
 # 3
 
@@ -16,7 +17,6 @@ df['overweight'] = None
 def draw_cat_plot():
     # 5
     df_cat = None
-
 
     # 6
     df_cat = None
